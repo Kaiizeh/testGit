@@ -1,0 +1,56 @@
+h2{
+    color:red;
+    transition: 1s;
+}
+
+@keyframes rotation{
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+h2:hover{
+    color: black;
+    rotate: 90em;
+    animation: rotation 2s;
+}
+
+
+.card{
+    height: 480px;
+    width: 50%;
+    border: solid #7c7c77;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    margin-right: 20px;
+}

@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<h2>
+ {{legende}}
+</h2>
+<nav class="navbar navbar-dark bg-dark" [hidden]="estCacheMenu">
+ <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" (click)="derniersRapports()">Derniers rapports</a>
+        <table class="table table-bordered" style="background-color: #f1f1f1f1;" *ngIf="rapportHidden">
+            <tr>
+                <th>Date</th>
+                <th>motif</th>
+                <th>Bilan</th>
+                <th>Nom du visiteur</th>
+            </tr>
+            <tr *ngFor="let rapport of lesRapports">
+                <td>{{rapport.date }} </td>
+                <td>{{rapport.motif }} </td>
+                <td>{{rapport.bilan }} </td>
+                <td>{{rapport.nom }} </td>
+            </tr>
+        </table>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="majMedecin()">MAJ</a>
+    </li>
+ </ul>
+</nav>
+<div class="col-lg-6">
+    <div class="form-group">
+        <input type="search" placeholder="Nom du médecin..." [(ngModel)]="nomMedecin" (keyup)="charger()" />
+    </div>
+</div>
+<div class="list-group">
+    <ul>
+        <li class="list-group-item" *ngFor="let medecin of lesMedecins" (click) = "selectionner(medecin)">
+            {{medecin.nom}} {{medecin.prenom}} ;dep : {{medecin.departement}}
+        </li>
+    </ul>
+</div>   
+
